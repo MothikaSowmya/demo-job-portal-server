@@ -8,12 +8,18 @@ app.use(cookieParser(process.env.COOKIE_SECRET));
 // Middlewares
 app.use(express.json());
 app.use(
-    cors({
-        origin: ["https://mern-job-portal-seven.vercel.app","http://localhost:5173","https://demo-job-portal-client-git-main-sowmyas-projects-cfd67827.vercel.app"],
-        methods: ["GET,POST,DELETE,PUT,PATCH"],
-        credentials: true,
-    })
+  cors({
+    origin: [
+      "https://demo-job-portal-client-mu.vercel.app",  // ✅ Add this
+      "https://mern-job-portal-seven.vercel.app",
+      "http://localhost:5173",
+      "https://demo-job-portal-client-git-main-sowmyas-projects-cfd67827.vercel.app"
+    ],
+    methods: ["GET", "POST", "DELETE", "PUT", "PATCH"],  // ✅ Correct format
+    credentials: true
+  })
 );
+
 
 // Custom Middlewares
 const {
